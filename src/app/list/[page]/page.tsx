@@ -1,14 +1,8 @@
 import ListTable from "@/features/routes/posts/list/components/ListTable";
 import { FetchData, List } from "@/features/routes/posts/list/hooks";
 
-interface Props {
-  params: {
-    page: string
-  }
-}
-
-export const ListPage: React.FC<Props> = async ({ params }) => {
-  const paramsPage = (await params).page;
+export default async function ListPage({ params }: any) {
+  const paramsPage = params.page;
   const page = parseInt(paramsPage, 10) - 1;
   const fetchNumber = parseInt(paramsPage, 10);
 
@@ -24,5 +18,3 @@ export const ListPage: React.FC<Props> = async ({ params }) => {
     )
   }
 }
-
-export default ListPage;
