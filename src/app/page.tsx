@@ -36,7 +36,7 @@ export default function Index() {
             <CardMedia
               component="img"
               height="140"
-              image="/list-image.png"
+              image="/images/list-image.png"
               alt="list sample"
             />
               <CardContent>
@@ -65,7 +65,7 @@ export default function Index() {
             <CardMedia
               component="img"
               height="140"
-              image="/map-image.png"
+              image="/images/map-image.png"
               alt="map sample"
             />
               <CardContent>
@@ -94,7 +94,7 @@ export default function Index() {
             <CardMedia
               component="img"
               height="140"
-              image="/chart-image.png"
+              image="/images/chart-image.png"
               alt="chart sample"
             />
               <CardContent>
