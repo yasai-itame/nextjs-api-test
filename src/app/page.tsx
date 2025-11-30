@@ -1,95 +1,117 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
+import { useRouter } from "next/navigation";
+//import Link from "next/link";
+import { Box, Card, Link, CardActionArea, CardMedia, CardContent, Typography } from "@mui/material";
+import InfoIcon from "@mui/icons-material/Info";
+import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
+import BarChartIcon from "@mui/icons-material/BarChart";
+export default function Index() {
+  const router = useRouter();
+  const linkAction = (name: string): void => {
+    switch (name) {
+      case "list":
+        return router.push("/map")
+    }
+  }
 
-export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <>
+      <Box
+        sx={
+          {
+            display: "flex",
+            justifyContent: "space-around"
+          }
+        }
+      >
+        <Card
+          variant="outlined"
+          sx={{ width: "32%"}}
+        >
+          <CardActionArea sx={{height: "100%"}}>
+            <Link
+              href="/list/1"
+              sx={{display: "block", height: "100%", textDecoration: "none"}}
+            >
+            <CardMedia
+              component="img"
+              height="140"
+              image="/list-image.png"
+              alt="list sample"
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+              <CardContent>
+                <Box sx={{display: "flex", alignItems: "center", marginBottom: "10px"}}>
+                  <InfoIcon sx={{width: "40px", height: "auto", display: "block", marginRight: "10px"}} />
+                  <Typography variant="h5">
+                  List
+                  </Typography>
+                </Box>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  jsonplaceholderを用いた一覧ページを表示
+                </Typography>
+              </CardContent>
+            </Link>
+          </CardActionArea>
+        </Card>
+        <Card
+          variant="outlined"
+          sx={{ width: "32%"}}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <CardActionArea sx={{height: "100%"}}>
+            <Link
+              href="/map"
+              sx={{display: "block", height: "100%", textDecoration: "none"}}
+            >
+            <CardMedia
+              component="img"
+              height="140"
+              image="/map-image.png"
+              alt="map sample"
+            />
+              <CardContent>
+                <Box sx={{display: "flex", alignItems: "center", marginBottom: "10px"}}>
+                  <AddLocationAltIcon sx={{ width: "40px", height: "auto", display: "block", marginRight: "10px" }} />
+                  <Typography variant="h5">
+                    Map
+                  </Typography>
+                </Box>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  国土地理院API・OpenStreetMap・OverpassAPIを用いた地図のページ
+                </Typography>
+              </CardContent>
+            </Link>
+          </CardActionArea>
+        </Card>
+        <Card
+          variant="outlined"
+          sx={{ width: "32%"}}
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+          <CardActionArea sx={{height: "100%"}}>
+            <Link
+              href="/chart"
+              sx={{display: "block", height: "100%", textDecoration: "none"}}
+            >
+            <CardMedia
+              component="img"
+              height="140"
+              image="/chart-image.png"
+              alt="chart sample"
+            />
+              <CardContent>
+                <Box sx={{display: "flex", alignItems: "center", marginBottom: "10px"}}>
+                  <BarChartIcon sx={{ width: "40px", height: "auto", display: "block", marginRight: "10px" }} />
+                  <Typography variant="h5">
+                    Chart
+                  </Typography>
+                </Box>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  政府統計の総合窓口（e-Stat）を用いたチャートページ
+                </Typography>
+              </CardContent>
+            </Link>
+          </CardActionArea>
+        </Card>
+      </Box>
+    </>
+  )
 }
