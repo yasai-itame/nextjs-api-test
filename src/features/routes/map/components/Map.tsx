@@ -6,7 +6,7 @@ import { LatLngData } from "../hooks";
 import Loading from "@/components/Loading";
 import { ElementsData } from "@/types/elementsData";
 
-import "/leaflet/dist/leaflet.css";
+import "leaflet/dist/leaflet.css";
 
 import icon from "/leaflet/dist/images/marker-icon.png";
 import iconShadow from "/leaflet/dist/images/marker-shadow.png";
@@ -37,15 +37,15 @@ const Map: React.FC<Props> = ({ latitude, longitude, category, loading }) => {
   const zoom = 20;
 
   L.Icon.Default.mergeOptions({
-    iconRetinaUrl: iconRetina.src ?? iconRetina,
-    iconUrl: icon.src ?? icon,
-    shadowUrl: iconShadow.src ?? iconShadow,
+    iconRetinaUrl: "/leaflet/dist/images/marker-icon-2x.png",
+    iconUrl: "/leaflet/dist/images/marker-icon.png",
+    shadowUrl: "/leaflet/dist/images/marker-shadow.png",
   });
 
   const categoryIcon = L.icon({
-    iconRetinaUrl: iconGreenRetina.src ?? iconGreenRetina,
-    iconUrl: iconGreen.src ?? iconGreen,
-    shadowUrl: iconShadow.src ?? iconShadow,
+    iconRetinaUrl: "/leaflet/dist/images/marker-icon-2x-green.png",
+    iconUrl: "/leaflet/dist/images/marker-icon-green.png",
+    shadowUrl: "/leaflet/dist/images/marker-shadow.png",
     shadowSize: [20, 26.24],
     iconSize: [16, 26.24],
     iconAnchor: [7.68, 26.24],
