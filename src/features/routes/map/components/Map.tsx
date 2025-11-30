@@ -8,11 +8,11 @@ import { ElementsData } from "@/types/elementsData";
 
 import "leaflet/dist/leaflet.css";
 
-import icon from "/leaflet/dist/images/marker-icon.png";
-import iconShadow from "/leaflet/dist/images/marker-shadow.png";
-import iconRetina from "/leaflet/dist/images/marker-icon-2x.png";
-import iconGreen from "/leaflet/dist/images/marker-icon-green.png";
-import iconGreenRetina from "/leaflet/dist/images/marker-icon-2x-green.png";
+// import icon from "/leaflet/dist/images/marker-icon.png";
+// import iconShadow from "/leaflet/dist/images/marker-shadow.png";
+// import iconRetina from "/leaflet/dist/images/marker-icon-2x.png";
+// import iconGreen from "/leaflet/dist/images/marker-icon-green.png";
+// import iconGreenRetina from "/leaflet/dist/images/marker-icon-2x-green.png";
 
 interface Props {
   latitude: number;
