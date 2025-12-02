@@ -1,4 +1,5 @@
 import { LatLng } from "leaflet";
+import { ElementsData } from "@/types/elementsData";
 
 export const GeoFetchData = async (name: string) => {
   // 国土地理院API
@@ -79,9 +80,9 @@ export const MapFetchData = async (south: number, west: number, north: number, e
   }
 }
 
-export const LatLngData = (data: any) => {
+export const LatLngData = (data: ElementsData) => {
   const positionData: LatLng[] = [];
-  const popUpData: Array<Record<string, any>> = [];
+  const popUpData: Array<Record<string, string | number>> = [];
 
   if (!Array.isArray(data)) {
     return { positionData, popUpData };
@@ -98,7 +99,6 @@ export const LatLngData = (data: any) => {
         name: tags.name ?? null,
         shop: tags.shop ?? null,
         brand: tags.brand ?? null,
-        raw: tags
       });
     }
   }

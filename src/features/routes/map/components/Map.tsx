@@ -15,7 +15,7 @@ interface Props {
   loading: boolean;
 }
 
-const Recenter = ({ lat, lng, cat }: { lat: number; lng: number; cat: any }) => {
+const Recenter = ({ lat, lng, cat }: { lat: number; lng: number; cat: ElementsData }) => {
   const map = useMap();
   useEffect(() => {
     map.setView([lat, lng], map.getZoom());

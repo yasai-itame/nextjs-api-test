@@ -1,19 +1,9 @@
 "use client"
-import { useRouter } from "next/navigation";
-//import Link from "next/link";
 import { Box, Card, Link, CardActionArea, CardMedia, CardContent, Typography } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import BarChartIcon from "@mui/icons-material/BarChart";
 export default function Index() {
-  const router = useRouter();
-  const linkAction = (name: string): void => {
-    switch (name) {
-      case "list":
-        return router.push("/map")
-    }
-  }
-
   return (
     <>
       <Box

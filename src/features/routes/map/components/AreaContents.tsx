@@ -28,6 +28,7 @@ const AreaContents: React.FC<Props> = ({ mapDataValue, mapMultipleDataValue, loa
       }
     }
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   if (searchArea && geo.length) {

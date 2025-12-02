@@ -46,6 +46,7 @@ const MapPage: React.FC = () => {
     if (nav && nav.type === "reload") {
       router.push("/map");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

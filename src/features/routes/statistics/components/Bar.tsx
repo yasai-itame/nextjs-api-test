@@ -51,26 +51,28 @@ const Bar: React.FC = () => {
         obj["cat02"] = v["@cat02"];
         return obj;
       });
+
+
+
       if (classData.length !== valueData.length) {
         const extractionCat02 = valueData.map(v => v["@cat02"]);
-        const notData = classData.filter((v: string) => !extractionCat02.includes(v)).map((v: any) => {
+        const notData = classData.filter((v1: string) => !extractionCat02.includes(v1)).map((v2: string) => {
           const obj = { value: "", cat02: "" };
           obj["value"] = "0";
-          obj["cat02"] = v;
+          obj["cat02"] = v2;
           return obj;
         });
         const result = [...notData, ...data];
         result.sort((a, b) => Number(a.cat02) - Number(b.cat02));
-        console.log(result)
         
         setPurposeData((prev) => {
           prev = [];
-          return result;
+          return [...prev, ...result];
         });
       } else {
         setPurposeData((prev) => {
           prev = [];
-          return data;
+          return [...prev, ...data];
         });
       }
     }
